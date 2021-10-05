@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Door Counter</title>
+</head>
+
+<body style="font-family:sans-serif">
+    <h1>Door Counter</h1>
+    <div>The current count is:</div>
+    <div id="countDiv" style="font-weight: 500; font-size: 2em;"> -- </div>
+    <button style="background-color: green;" onclick="increment">Increment</button>
+    <button style="background-color: red;" onclick="decrement">Decrement</button>
+    <script>
+        let count = 0
+
+        function increment() {
+            count = count + 1
+            console.log("Incrementing count to ", count)
+            updateCountOnPage()
+        }
+
+        function decrement() {
+            count = count - 1
+            console.log("Incrementing count to ", count)
+            updateCountOnPage()
+        }
+
+        function updateCountOnPage() {
+            let countDiv = document.getElementById("countDiv")
+            countDiv.innerText = count
+        }
+        setInterval (updateCountOnPage, 2000)
+        
+        updateCountOnPage()
+    </script>
+
+</body>
+
+</html>
